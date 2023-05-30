@@ -71,8 +71,8 @@ public class RegistrationForm extends JDialog{
     public User user;
     private User adduserToDatabase(String name, String email, String phone, String address, String password) {
         User user = null;
-        final String DB_URL = "jdbc:mysql://localhost:3306/mysql";
-        final String USERNAME = "root";
+        final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
+        final String USERNAME = "postgres";
         final String PASSWORD = "";
 
         try{

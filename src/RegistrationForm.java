@@ -72,11 +72,12 @@ public class RegistrationForm extends JDialog{
     private User adduserToDatabase(String name, String email, String phone, String address, String password) {
         User user = null;
         final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
+        final String SQCONN = "jdbc:sqlite:users.sqlite";
         final String USERNAME = "postgres";
         final String PASSWORD = "";
 
         try{
-            Connection conn = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+            Connection conn = DriverManager.getConnection(SQCONN);
 
             Statement stmt = conn.createStatement();
             String sql = "INSERT INTO users (name, email, phone, address, password) " +
